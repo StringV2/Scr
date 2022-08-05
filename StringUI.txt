@@ -530,7 +530,7 @@ function Blacklib:Window()
         TabImage.BackgroundTransparency = 1.000
         TabImage.Position = UDim2.new(0, 3, 0, 4)
         TabImage.Size = UDim2.new(0, 20, 0, 20)
-        TabImage.Image = img or ""
+        TabImage.Image = img or "rbxassetid://10377000788"
         TabImage.ImageColor3 = Color3.fromRGB(200,200,200)
         
         TabTitle.Name = tabtitle or "TabTitle"
@@ -838,7 +838,7 @@ function Blacklib:Window()
                 ImageLabel.BorderSizePixel = 0
                 ImageLabel.Position = UDim2.new(0, 5, 0, 6)
                 ImageLabel.Size = UDim2.new(0, 18, 0, 18)
-                ImageLabel.Image = "rbxassetid://8825010231"
+                ImageLabel.Image = "rbxassetid://10377000788"
                 ImageLabel.ImageColor3 = Color3.fromRGB(180,180,180)
                 
                 Space.Name = "Space"
