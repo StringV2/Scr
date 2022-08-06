@@ -683,7 +683,7 @@ function Blacklib:Window()
 			Button.BackgroundColor3 = Color3.fromRGB(1,245,255)
 			Button.Size = UDim2.new(0, 387, 0, 31)
 			
-			UICorner.CornerRadius = UDim.new(0, 0)
+			UICorner.CornerRadius = UDim.new(0, 5)
 			UICorner.Parent = Button
 			
 			TextBtn.Name = "TextBtn"
@@ -692,7 +692,7 @@ function Blacklib:Window()
 			TextBtn.Position = UDim2.new(0, 1, 0, 1)
 			TextBtn.Size = UDim2.new(0, 383, 0, 29)
 			TextBtn.AutoButtonColor = false
-			TextBtn.Font = Enum.Font.GothamSemibold
+			TextBtn.Font = Enum.Font.Code
 			TextBtn.Text = text
 			TextBtn.TextColor3 = Color3.fromRGB(225, 225, 225)
 			TextBtn.TextSize = 15.000
@@ -706,7 +706,7 @@ function Blacklib:Window()
 			Black.BackgroundTransparency = 1.000
 			Black.BorderSizePixel = 0
 			Black.Position = UDim2.new(0, 1, 0, 1)
-			Black.Size = UDim2.new(0, 468, 0, 29)
+			Black.Size = UDim2.new(0, 385, 0, 29)
 			
 			UICorner_3.CornerRadius = UDim.new(0, 5)
 			UICorner_3.Parent = Black
