@@ -80,7 +80,7 @@ function Blacklib:Window()
     WindowStroke.Name = "WindowStroke"
     WindowStroke.Parent = WindowFrame
     WindowStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    WindowStroke.Color = Color3.fromRGB(120,120,120)
+    WindowStroke.Color = Color3.fromRGB(1,245,255)
     WindowStroke.LineJoinMode = Enum.LineJoinMode.Round
     WindowStroke.Thickness = 1
     WindowStroke.Transparency = 0
@@ -96,7 +96,7 @@ function Blacklib:Window()
     PlayTime.Font = Enum.Font.Code
     PlayTime.Text = ""
     PlayTime.TextSize = 13.000
-    PlayTime.TextColor3 = Color3.fromRGB(180,180,180)
+    PlayTime.TextColor3 = Color3.fromRGB(1,245,255)
     PlayTime.TextXAlignment = Enum.TextXAlignment.Center
     
     PlayTimeCorner.Name = "PlayTimeCorner"
