@@ -592,7 +592,7 @@ function Blacklib:Window()
                 end
             end
             game.TweenService:Create(TabFrame, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), 
-                {BackgroundColor3 = Color3.fromRGB(1, 245, 255)}
+                {BackgroundColor3 = Color3.fromRGB(1,245,255)}
                 ):Play()
             game.TweenService:Create(TabFrame, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                 {BackgroundTransparency = 0.9}
