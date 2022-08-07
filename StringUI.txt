@@ -757,7 +757,7 @@ function Blacklib:Window()
                 ToggleImage.Name = "ToggleImage"
                 ToggleImage.Parent = Toggle
                 ToggleImage.BackgroundColor3 = Color3.fromRGB(70, 68, 79)
-                ToggleImage.Position = UDim2.new(0, 193, 0, 5)
+                ToggleImage.Position = UDim2.new(0, 384, 0, 5)
                 ToggleImage.BorderSizePixel = 0
                 ToggleImage.Size = UDim2.new(0, 20, 0, 20)
                 local ToggleImageCorner = Instance.new("UICorner")
