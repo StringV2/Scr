@@ -671,7 +671,7 @@ function Blacklib:Window()
             -- Button --
             local ItemHand = {}
             function ItemHand:Button(text,callback)
-			 local Button = Instance.new("Frame")
+			local Button = Instance.new("Frame")
 			local UICorner = Instance.new("UICorner")
 			local TextBtn = Instance.new("TextButton")
 			local UICorner_2 = Instance.new("UICorner")
@@ -679,8 +679,8 @@ function Blacklib:Window()
 			local UICorner_3 = Instance.new("UICorner")
 			
 			Button.Name = "Button"
-			Button.Parent = ScrollTab
-			Button.BackgroundColor3 = _G.Color
+			Button.Parent = sectionFrame
+			Button.BackgroundColor3 = Color3.fromRGB(1, 245, 255)
 			Button.Size = UDim2.new(0, 387, 0, 30)
 			
 			UICorner.CornerRadius = UDim.new(0, 5)
