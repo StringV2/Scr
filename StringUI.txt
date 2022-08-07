@@ -690,7 +690,7 @@ function Blacklib:Window()
 			TextBtn.Parent = Button
 			TextBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 			TextBtn.Position = UDim2.new(0, 1, 0, 1)
-			TextBtn.Size = UDim2.new(0, 468, 0, 29)
+			TextBtn.Size = UDim2.new(0, 385, 0, 29)
 			TextBtn.AutoButtonColor = false
 			TextBtn.Font = Enum.Font.GothamSemibold
 			TextBtn.Text = text
