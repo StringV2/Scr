@@ -671,70 +671,52 @@ function Blacklib:Window()
             -- Button --
             local ItemHand = {}
             function ItemHand:Button(text,callback)
-			local Button = Instance.new("Frame")
-			local UICorner = Instance.new("UICorner")
-			local TextBtn = Instance.new("TextButton")
-			local UICorner_2 = Instance.new("UICorner")
-			local Black = Instance.new("Frame")
-			local UICorner_3 = Instance.new("UICorner")
-			
-			Button.Name = "Button"
-			Button.Parent = sectionFrame
-			Button.BackgroundColor3 = Color3.fromRGB(1, 245, 255)
-			Button.Size = UDim2.new(0, 387, 0, 30)
-			
-			UICorner.CornerRadius = UDim.new(0, 5)
-			UICorner.Parent = Button
-			
-			TextBtn.Name = "TextBtn"
-			TextBtn.Parent = Button
-			TextBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-			TextBtn.Position = UDim2.new(0, 1, 0, 1)
-			TextBtn.Size = UDim2.new(0, 385, 0, 28)
-			TextBtn.AutoButtonColor = false
-			TextBtn.Font = Enum.Font.GothamSemibold
-			TextBtn.Text = text
-			TextBtn.TextColor3 = Color3.fromRGB(225, 225, 225)
-			TextBtn.TextSize = 15.000
-			
-			UICorner_2.CornerRadius = UDim.new(0, 5)
-			UICorner_2.Parent = TextBtn
-			
-			Black.Name = "Black"
-			Black.Parent = Button
-			Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-			Black.BackgroundTransparency = 1.000
-			Black.BorderSizePixel = 0
-			Black.Position = UDim2.new(0, 1, 0, 1)
-			Black.Size = UDim2.new(0, 387, 0, 29)
-			
-			UICorner_3.CornerRadius = UDim.new(0, 5)
-			UICorner_3.Parent = Black
-
-			TextBtn.MouseEnter:Connect(function()
-				TweenService:Create(
-					Black,
-					TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-					{BackgroundTransparency = 0.7}
-				):Play()
-			end)
-			TextBtn.MouseLeave:Connect(function()
-				TweenService:Create(
-					Black,
-					TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-					{BackgroundTransparency = 1}
-				):Play()
-			end)
-			TextBtn.MouseButton1Click:Connect(function()
-				TextBtn.TextSize = 0
-				TweenService:Create(
-					TextBtn,
-					TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-					{TextSize = 15}
-				):Play()
-				callback()
-			end)
-		end
+			    local Button = Instance.new("TextButton")
+    
+                Button.Name = "Button"
+                Button.Parent = sectionFrame
+                Button.BackgroundColor3 = Color3.fromRGB(50, 48, 59)
+                Button.BackgroundTransparency = 0.1
+                Button.BorderSizePixel = 0
+                Button.Size = UDim2.new(0, 387, 0, 30)
+                Button.AutoButtonColor = false
+                Button.Font = Enum.Font.Gotham
+                Button.Text = text
+                Button.TextColor3 = Color3.fromRGB(225, 225, 225)
+                Button.TextSize = 11.000
+                Button.TextWrapped = true
+                
+                local ButtonCorner = Instance.new("UICorner")
+                ButtonCorner.Name = "ButtonCorner"
+                ButtonCorner.CornerRadius = UDim.new(0, 5)
+                ButtonCorner.Parent = Button
+                
+                Button.MouseEnter:Connect(function()
+                    TweenService:Create(
+                        Button,
+                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                        {TextColor3 = Color3.fromRGB(1,245,255)}
+                    ):Play()
+                end)
+                
+                Button.MouseLeave:Connect(function()
+                    TweenService:Create(
+                        Button,
+                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                        {TextColor3 = Color3.fromRGB(225, 225, 225)}
+                    ):Play()
+                end)
+                
+                Button.MouseButton1Click:Connect(function()
+                    callback()
+                    Button.TextSize = 0
+                    TweenService:Create(
+                        Button,
+                        TweenInfo.new(0.4,Enum.EasingStyle.Back,Enum.EasingDirection.Out),
+                        {TextSize = 11}
+                    ):Play()
+                end)
+            end
             -- End Button --
             
             -- Toggled --
