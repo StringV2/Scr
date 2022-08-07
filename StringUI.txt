@@ -680,7 +680,7 @@ function Blacklib:Window()
                 Button.BorderSizePixel = 0
                 Button.Size = UDim2.new(0, 387, 0, 30)
                 Button.AutoButtonColor = false
-                Button.Font = Enum.Font.Gotham
+                Button.Font = Enum.Font.Code
                 Button.Text = text
                 Button.TextColor3 = Color3.fromRGB(225, 225, 225)
                 Button.TextSize = 11.000
@@ -720,117 +720,101 @@ function Blacklib:Window()
             -- End Button --
             
             -- Toggled --
-            function ItemHand:Toggle(TogInfo, default, callback)
-                local toggle = false
-                local CheckFrame = Instance.new("Frame")
-                local CheckFrame2 = Instance.new("Frame")
-                local UIStroke = Instance.new("UIStroke")
-                local UIListLayout = Instance.new("UIListLayout")
-                local UICorner = Instance.new("UICorner")
-                local ImageLabel = Instance.new("ImageLabel")
-                local Space = Instance.new("TextLabel")
-                local Title = Instance.new("TextLabel")
-                local ImageButton = Instance.new("ImageButton")
+            function ItemHand:Toggle(text,config,callback)
+                local ToggleImage = Instance.new("Frame")
                 
-                -- Prop --
-                CheckFrame.Name = TogInfo or "CheckFrame"
-                CheckFrame.Parent = sectionFrame
-                CheckFrame.BackgroundColor3 = _G.BackgroundItemColor
-                CheckFrame.BackgroundTransparency = 1.000
-                CheckFrame.BorderSizePixel = 0
-                CheckFrame.Size = UDim2.new(0, 387, 0, 30)
-            
-                CheckFrame2.Name = "CheckFrame2"
-                CheckFrame2.Parent = CheckFrame
-                CheckFrame2.BackgroundColor3 = Color3.fromRGB(30,30,30)
-                CheckFrame2.BorderSizePixel = 0
-                CheckFrame2.Position = UDim2.new(0, 3, 0, 0)
-                CheckFrame2.Size = UDim2.new(0, 381, 0, 30)
+                local Toggle = Instance.new("TextButton")
+                Toggle.Name = "Toggle"
+                Toggle.Parent = sectionFrame
+                Toggle.BackgroundColor3 = Color3.fromRGB(50, 48, 59)
+                Toggle.BackgroundTransparency = 0.1
+                Toggle.BorderSizePixel = 0
+                Toggle.AutoButtonColor = false
+                Toggle.Size = UDim2.new(0, 387, 0, 30)
+                Toggle.Font = Enum.Font.SourceSans
+                Toggle.Text = ""
+                Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+                Toggle.TextSize = 14.000
                 
-                UIStroke.Name = "UIStroke"
-                UIStroke.Parent = CheckFrame2
-                UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                UIStroke.Color = Color3.fromRGB(180,180,180)
-                UIStroke.LineJoinMode = Enum.LineJoinMode.Round
-                UIStroke.Thickness = 0.5
-                UIStroke.Transparency = 0
-                UIStroke.Enabled = true
-                UIStroke.Archivable = true
+                local ToggleCorner = Instance.new("UICorner")
+                ToggleCorner.Name = "ToggleCorner"
+                ToggleCorner.CornerRadius = UDim.new(0, 5)
+                ToggleCorner.Parent = Toggle
+    
+                local ToggleLabel = Instance.new("TextLabel")
+                ToggleLabel.Name = "ToggleLabel"
+                ToggleLabel.Parent = Toggle
+                ToggleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                ToggleLabel.BackgroundTransparency = 1.000
+                ToggleLabel.Position = UDim2.new(0, 13, 0, 0)
+                ToggleLabel.Size = UDim2.new(0, 410, 0, 30)
+                ToggleLabel.Font = Enum.Font.Gotham
+                ToggleLabel.Text = text
+                ToggleLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
+                ToggleLabel.TextSize = 11.000
+                ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+    
+                ToggleImage.Name = "ToggleImage"
+                ToggleImage.Parent = Toggle
+                ToggleImage.BackgroundColor3 = Color3.fromRGB(70, 68, 79)
+                ToggleImage.Position = UDim2.new(0, 193, 0, 5)
+                ToggleImage.BorderSizePixel = 0
+                ToggleImage.Size = UDim2.new(0, 20, 0, 20)
+                local ToggleImageCorner = Instance.new("UICorner")
+                ToggleImageCorner.Name = "ToggleImageCorner"
+                ToggleImageCorner.CornerRadius = UDim.new(0, 5)
+                ToggleImageCorner.Parent = ToggleImage
+    
+                local ToggleImage2 = Instance.new("Frame")
+                ToggleImage2.Name = "ToggleImage2"
+                ToggleImage2.Parent = ToggleImage
+                ToggleImage2.AnchorPoint = Vector2.new(0.5, 0.5)
+                ToggleImage2.BackgroundColor3 = Color3.fromRGB(1,245,255)
+                ToggleImage2.Position = UDim2.new(0, 10, 0, 10)
+                ToggleImage2.Visible = false
+    
+                local ToggleImage2Corner = Instance.new("UICorner")
+                ToggleImage2Corner.Name = "ToggleImageCorner"
+                ToggleImage2Corner.CornerRadius = UDim.new(0, 5)
+                ToggleImage2Corner.Parent = ToggleImage2
                 
-                UICorner.Parent = CheckFrame2
-                UICorner.CornerRadius = UDim.new(0, 3)
-                
-                ImageLabel.Name = "ImageLabel"
-                ImageLabel.Parent = CheckFrame2
-                ImageLabel.BackgroundColor3 = _G.SectionColor
-                ImageLabel.BackgroundTransparency = 1.000
-                ImageLabel.BorderSizePixel = 0
-                ImageLabel.Position = UDim2.new(0, 5, 0, 6)
-                ImageLabel.Size = UDim2.new(0, 18, 0, 18)
-                ImageLabel.Image = "rbxassetid://10377000788"
-                ImageLabel.ImageColor3 = Color3.fromRGB(180,180,180)
-                
-                Space.Name = "Space"
-                Space.Parent = CheckFrame2
-                Space.BackgroundColor3 = _G.SectionColor
-                Space.BackgroundTransparency = 1.000
-                Space.Position = UDim2.new(0, 30, 0, 0)
-                Space.Size = UDim2.new(0, 15, 0, 30)
-                Space.Font = Enum.Font.GothamSemibold
-                Space.Text = "|"
-                Space.TextSize = 13.000
-                Space.TextColor3 = Color3.fromRGB(180,180,180)
-                Space.TextXAlignment = Enum.TextXAlignment.Center
-            
-                Title.Name = "Title"
-                Title.Parent = CheckFrame2
-                Title.BackgroundColor3 = _G.SectionColor
-                Title.BackgroundTransparency = 1.000
-                Title.Position = UDim2.new(0, 50, 0, 0)
-                Title.Size = UDim2.new(0, 280, 0, 30)
-                Title.Font = Enum.Font.Code
-                Title.Text = TogInfo or "checkBox Title"
-                Title.TextColor3 = Color3.fromRGB(180,180,180)
-                Title.TextSize = 12.000
-                Title.TextXAlignment = Enum.TextXAlignment.Left
-            
-                ImageButton.Name = "ImageButton"
-                ImageButton.Parent = CheckFrame2
-                ImageButton.BackgroundColor3 = _G.WindowBackgroundColor
-                ImageButton.BackgroundTransparency = 1.000
-                ImageButton.Position = UDim2.new(0, 352, 0, 4)
-                ImageButton.Size = UDim2.new(0, 23, 0, 23)
-                ImageButton.ZIndex = 2
-                ImageButton.Image = "rbxassetid://3926311105"
-                ImageButton.ImageColor3 = Color3.fromRGB(180,180,180)
-                ImageButton.ImageRectOffset = Vector2.new(940, 784)
-                ImageButton.ImageRectSize = Vector2.new(48, 48)
-                
-                -- Toggle Script --
-                if default == true then
-                    ImageButton.ImageRectOffset = Vector2.new(4, 836)
-                    game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-                        {ImageColor3 = Color3.fromRGB(0,255,0)}
-                        ):Play()
-                    toggle = not toggle
-                    pcall(callback, toggle)
-                end
-                
-                ImageButton.MouseButton1Click:Connect(function()
-                    if toggle == false then
-                        game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-                            {ImageColor3 = Color3.fromRGB(0,255,0)}
-                            ):Play()
-                        ImageButton.ImageRectOffset = Vector2.new(4, 836)
-                    else
-                        game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-                            {ImageColor3 = Color3.fromRGB(180,180,180)}
-                            ):Play()
-                        ImageButton.ImageRectOffset = Vector2.new(940, 784)
-                    end
-                    toggle = not toggle
-                    pcall(callback, toggle)
+                Toggle.MouseEnter:Connect(function()
+                    TweenService:Create(
+                        ToggleLabel,
+                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                        {TextColor3 = Color3.fromRGB(1,254,255)}
+                    ):Play()
                 end)
+    
+                Toggle.MouseLeave:Connect(function()
+                    TweenService:Create(
+                        ToggleLabel,
+                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                        {TextColor3 = Color3.fromRGB(225, 225, 225)}
+                    ):Play()
+                end)
+                if config == nil then config = false end
+                local toggled = config or false
+                Toggle.MouseButton1Click:Connect(function()
+                    if toggled == false then
+                        toggled = true
+                        ToggleImage2.Visible = true
+                        ToggleImage2:TweenSize(UDim2.new(0, 21, 0, 21),"In","Quad",0.1,true)
+                    else
+                        toggled = false
+                        ToggleImage2:TweenSize(UDim2.new(0, 0, 0, 0),"In","Quad",0.1,true)
+                        wait(0.1)
+                        ToggleImage2.Visible = false
+                    end
+                    callback(toggled)
+                end)
+                
+                if config == true then
+                    ToggleImage2.Visible = true
+                    ToggleImage2:TweenSize(UDim2.new(0, 21, 0, 21),"In","Quad",0.1,true)
+                    toggled = true
+                    callback(toggled)
+                end
             end
             -- End Toggle --
             
