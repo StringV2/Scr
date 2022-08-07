@@ -671,7 +671,7 @@ function Blacklib:Window()
             -- Button --
             local ItemHand = {}
             function ItemHand:Button(text,callback)
-			local Button = Instance.new("Frame")
+			 local Button = Instance.new("Frame")
 			local UICorner = Instance.new("UICorner")
 			local TextBtn = Instance.new("TextButton")
 			local UICorner_2 = Instance.new("UICorner")
@@ -679,9 +679,9 @@ function Blacklib:Window()
 			local UICorner_3 = Instance.new("UICorner")
 			
 			Button.Name = "Button"
-			Button.Parent = sectionFrame
-			Button.BackgroundColor3 = Color3.fromRGB(1,245,255)
-			Button.Size = UDim2.new(0, 387, 0, 31)
+			Button.Parent = ScrollTab
+			Button.BackgroundColor3 = _G.Color
+			Button.Size = UDim2.new(0, 387, 0, 30)
 			
 			UICorner.CornerRadius = UDim.new(0, 5)
 			UICorner.Parent = Button
@@ -690,7 +690,7 @@ function Blacklib:Window()
 			TextBtn.Parent = Button
 			TextBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 			TextBtn.Position = UDim2.new(0, 1, 0, 1)
-			TextBtn.Size = UDim2.new(0, 385, 0, 29)
+			TextBtn.Size = UDim2.new(0, 385, 0, 28)
 			TextBtn.AutoButtonColor = false
 			TextBtn.Font = Enum.Font.GothamSemibold
 			TextBtn.Text = text
@@ -706,7 +706,7 @@ function Blacklib:Window()
 			Black.BackgroundTransparency = 1.000
 			Black.BorderSizePixel = 0
 			Black.Position = UDim2.new(0, 1, 0, 1)
-			Black.Size = UDim2.new(0, 385, 0, 29)
+			Black.Size = UDim2.new(0, 387, 0, 29)
 			
 			UICorner_3.CornerRadius = UDim.new(0, 5)
 			UICorner_3.Parent = Black
